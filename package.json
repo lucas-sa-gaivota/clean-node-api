@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.ts": [
+      "eslint 'src/**' --fix",
+      "git add"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,8 +24,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "git-commit-msg-linter": "^3.0.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.5.2",
+    "husky": "^6.0.0",
+    "lint-staged": "^9.5.0",
     "typescript": "^4.3.2"
   }
 }
