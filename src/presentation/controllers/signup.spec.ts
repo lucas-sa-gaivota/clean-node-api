@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { SignUpController } from './signup'
+import { MissingParamsError } from '../errors/missing-params-error'
 
 describe('SignUp Controler', () => {
   test('should return 400 if no name is provided', () => {
@@ -13,7 +13,7 @@ describe('SignUp Controler', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: name'))
+    expect(httpResponse.body).toEqual(new MissingParamsError('name'))
   })
 
   test('should return 400 if no email is provided', () => {
@@ -27,6 +27,6 @@ describe('SignUp Controler', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: email'))
+    expect(httpResponse.body).toEqual(new MissingParamsError('email'))
   })
 })
