@@ -23,7 +23,7 @@ const makeSut = (): SutTypes => {
   }
 }
 
-describe('SignUp Controler', () => {
+describe('SignUp Controller', () => {
   test('should return 400 if no name is provided', () => {
     const { sut } = makeSut()
     const httpRequest = {

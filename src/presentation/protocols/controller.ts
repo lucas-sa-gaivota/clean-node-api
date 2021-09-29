@@ -1,5 +1,5 @@
 import { httpRequest, httpResponse } from './http'
 
-export interface Controler {
+export interface Controller {
   handle: (httpRequest: httpRequest) => httpResponse
 }
